@@ -1,0 +1,86 @@
+{
+    "languageserver": {
+        "godot": {
+            "host": "127.0.0.1",
+            "filetypes": ["gd", "gdscript", "gdscript3"],
+            "port": 6005
+        },
+        "lua": {
+            "command": "lua-language-server",
+            "filetypes": ["vim, lua"],
+            "rootPatterns": ["lua.config.json"],
+            "settings": {
+                "Lua": {
+                    "runtime": {
+                        "version": "LuaJIT",
+                        "path": "/usr/bin/luajit" // Replace with the path to your LuaJIT installation
+                    },
+                    "diagnostics": {
+                        "globals": ["vim, lua"]
+                    },
+                    "workspace": {
+                        "library": {
+                            "/usr/share/nvim/runtime/lua": true // Replace with the path to your Neovim runtime Lua files
+                        }
+                    }
+                }
+            }
+        },
+        "csharp-ls": {
+            "command": "csharp-ls",
+            "filetypes": ["cs"],
+            "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+        },
+        "coc.preferences.formatOnSaveFiletypes": [
+            "javascript",
+            "json",
+            "css",
+            "csharp",
+            "gdscript",
+            "html"
+        ]
+    },
+    "prettier": {
+        "bracketSpacing": true,
+        "semi": true,
+        "enable": true,
+        "tabWidth": 4,
+        "eslintIntegration": true,
+        "formatterPriority": 1,
+        "formatOnSave": true,
+        "bracketSameLine": true,
+        "arrowParens": "avoid"
+    },
+    "coc.preferences.formatOnSave": true,
+    "diagnostic.errorSign": "",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic.hintSign": "",
+    "suggest.completionItemKindLabels": {
+        "method": "  ",
+        "function": "  ",
+        "variable": "[]",
+        "field": "  ",
+        "typeParameter": "<>",
+        "constant": "  ",
+        "class": " פּ ",
+        "interface": " 蘒",
+        "struct": "  ",
+        "event": "  ",
+        "operator": "  ",
+        "module": "  ",
+        "property": "  ",
+        "enum": " 練",
+        "reference": "  ",
+        "keyword": "  ",
+        "file": "  ",
+        "folder": " ﱮ ",
+        "color": "  ",
+        "unit": " 塞 ",
+        "snippet": "  ",
+        "text": "  ",
+        "constructor": "  ",
+        "value": "  ",
+        "enumMember": "  "
+    }
+}
