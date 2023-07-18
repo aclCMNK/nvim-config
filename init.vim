@@ -19,6 +19,7 @@ set nowrap!
 set incsearch
 filetype plugin indent on
 syntax on
+set timeoutlen=100
 
 set encoding=UTF-8
 
