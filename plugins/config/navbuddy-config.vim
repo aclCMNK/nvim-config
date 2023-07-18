@@ -133,4 +133,3 @@ navbuddy.setup {
 
 EOF
 
-command! Symbols2 :lua require("nvim-navbuddy").open()

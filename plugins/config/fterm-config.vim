@@ -65,9 +65,3 @@ require'FTerm'.setup({
 
 EOF
 
-command! FTOpen :lua require('FTerm').open()
-command! FTClose :lua require('FTerm').close()
-command! FTExit :lua require('FTerm').exit()
-command! FTToggle :lua require('FTerm').toggle()
-
-command! Lgit :lua require('FTerm').run({ 'lgit' })

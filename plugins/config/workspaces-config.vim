@@ -43,4 +43,3 @@ require("workspaces").setup(
 
 EOF
 
-command! Projects :Telescope workspaces

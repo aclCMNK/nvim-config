@@ -1,4 +1,3 @@
-command! -nargs=* -complete=file Search call Search(<q-args>)
 function! Search(args)
 	let split = split(a:args, ' ')
 	if len(split) < 1
@@ -24,7 +23,6 @@ function! Search(args)
 	execute 'set ignorecase'
 endfunction
 
-command! -nargs=* -complete=file SearchAll call SearchAll(<q-args>)
 function! SearchAll(args)
 	let split = split(a:args, ' ')
 	if len(split) == 0
@@ -52,7 +50,6 @@ function! SearchAll(args)
 	execute 'set ignorecase'
 endfunction
 
-command! -nargs=* -complete=file ReplaceAll call ReplaceAll(<q-args>)
 function! ReplaceAll(args)
 	let split = split(a:args, ' ')
 	if len(split) < 2
@@ -70,7 +67,6 @@ function! ReplaceAll(args)
 	execute '%s/'.text.'/'.new_text.'/g'.case_sensitive
 endfunction
 
-command! -nargs=* -complete=file ReplaceInLine call ReplaceInLine(<q-args>)
 function! ReplaceInLine(args)
 	let split = split(a:args, ' ')
 	if len(split) < 2
@@ -112,7 +108,6 @@ function CloseAll()
 	vim.cmd(':q!')
 end
 EOF
-command! CloseAll :lua CloseAll()
 
 lua << EOF
 function get_visible_buffer_count()
@@ -157,4 +152,45 @@ function CloseBuffer()
 	end
 end
 EOF
+
+"GENERAL FUNCTIONS:
 command! CloseBuffer :lua CloseBuffer()
+command! CloseAll :lua CloseAll()
+command! -nargs=* -complete=file Search call Search(<q-args>)
+command! -nargs=* -complete=file SearchAll call SearchAll(<q-args>)
+command! -nargs=* -complete=file ReplaceAll call ReplaceAll(<q-args>)
+command! -nargs=* -complete=file ReplaceInLine call ReplaceInLine(<q-args>)
+
+
+"PLUGINS:
+"--BUFFER MANAGER
+command! OpenedFiles :lua require("buffer_manager.ui").toggle_quick_menu()
+
+"--COC
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+command! -nargs=0 DefinitionPreview :CocCommand fzf-preview.CocDefinition
+command! -nargs=0 GotoDefinition :CocCommand tsserver.goToSourceDefinition
+
+"--FTERM
+command! FTOpen :lua require('FTerm').open()
+command! FTClose :lua require('FTerm').close()
+command! FTExit :lua require('FTerm').exit()
+command! FTToggle :lua require('FTerm').toggle()
+command! Lgit :lua require('FTerm').run({ 'lgit' })
+
+"--MEMENTO
+command! Memento :lua require("memento").toggle()
+command! MementoClear :lua require("memento").clear_history()
+
+"--NAVBUDDY
+"command! Symbols2 :lua require("nvim-navbuddy").open()
+
+"--STARTUP
+command! StartupScreen :lua show_dashboard(1)
+
+"--SYMBOLS-OUTLINE
+command! Symbols :SymbolsOutline
+
+"--TELESCOPE
+command! Projects :Telescope workspaces
+

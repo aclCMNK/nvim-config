@@ -23,6 +23,3 @@ require("buffer_manager").setup({
 
 EOF
 
-command! OpenedFiles :lua require("buffer_manager.ui").toggle_quick_menu()
-inoremap <C-A-l> <ESC>:OpenedFiles<CR>
-nnoremap <C-A-l> <ESC>:OpenedFiles<CR>

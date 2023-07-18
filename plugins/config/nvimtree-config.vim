@@ -52,4 +52,3 @@ require("nvim-tree").setup({
 
 EOF
 
-nnoremap <C-b> <ESC>:NvimTreeFindFileToggle<CR>

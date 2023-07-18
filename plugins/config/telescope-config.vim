@@ -98,17 +98,5 @@ require('telescope').load_extension('coc')
 
 EOF
 
-nnoremap <leader>fb :Telescope file_browser path=%:p:h select_buffer=true<CR>
-nnoremap <leader>fp :Telescope project path=%:p:h select_buffer=true<CR>
-
-"inoremap <C-A-l> <ESC>:Telescope buffers<CR>
-"nnoremap <C-A-l> <ESC>:Telescope buffers<CR>
-
-inoremap <C-A-f> <ESC>:Telescope find_files<CR>
-nnoremap <C-A-f> <ESC>:Telescope find_files<CR>
-
-inoremap <C-A-g> <ESC>:Telescope grep_string<CR>
-nnoremap <C-A-g> <ESC>:Telescope grep_string<CR>
-
 
 

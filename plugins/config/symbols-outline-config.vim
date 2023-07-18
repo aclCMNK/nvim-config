@@ -67,28 +67,5 @@ require("symbols-outline").setup(opts)
 
 EOF
 
-command! Symbols :SymbolsOutline
 
 
-"--Default keymaps
-    "Key	        Action
-    "Escape	        Close outline
-    "Enter	        Go to symbol location in code
-    "o	            Go to symbol location in code without losing focus
-    "Ctrl+Space	    Hover current symbol
-    "K	            Toggles the current symbol preview
-    "r	            Rename symbol
-    "a	            Code actions
-    "h	            fold symbol
-    "l	            Unfold symbol
-    "W	            Fold all symbols
-    "E	            Unfold all symbols
-    "R	            Reset all folding
-    "?	            Show help message
-
-"--Highlights
-    "Highlight	                Purpose
-    "FocusedSymbol	            Highlight of the focused symbol
-    "Pmenu	                    Highlight of the preview popup windows
-    "SymbolsOutlineConnector	Highlight of the table connectors
-    "Comment	                Highlight of the info virtual text

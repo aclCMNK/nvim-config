@@ -16,4 +16,3 @@ show_dashboard(0)
 
 EOF
 
-command! StartupScreen :lua show_dashboard(1)

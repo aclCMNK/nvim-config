@@ -23,8 +23,8 @@ return require('packer').startup(function(use)
     }
     use 'nvim-telescope/telescope-project.nvim'
     use { 'nvim-tree/nvim-tree.lua' }
-	use { 'gaborvecsei/memento.nvim' }
-	use { 'natecraddock/workspaces.nvim' }
+    use 'gaborvecsei/memento.nvim'
+    use 'natecraddock/workspaces.nvim'
     use { 'ThePrimeagen/harpoon' }
     use { 'j-morano/buffer_manager.nvim' }
     use { "numToStr/FTerm.nvim" }

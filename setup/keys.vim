@@ -96,3 +96,60 @@ nnoremap <leader>ft <ESC>:Search
 nnoremap <leader>fa <ESC>:SearchAll 
 
 nnoremap <C-r> <ESC>:source $HOME/.config/nvim/init.vim<CR>
+
+
+
+
+"PLUGINS:
+"--BUFFER MANAGER
+inoremap <C-A-l> <ESC>:OpenedFiles<CR>
+nnoremap <C-A-l> <ESC>:OpenedFiles<CR>
+
+"--COC
+nnoremap <silent>gd :GotoDefinition<CR>
+nnoremap <silent>vd :DefinitionPreview<CR>
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+nmap <expr> <silent> <C-d> <SID>select_current_word()
+
+"--MEMENTO
+nnoremap <C-A-k> <ESC>:Memento<CR>
+
+"--NVIMTREE
+nnoremap <C-b> <ESC>:NvimTreeFindFileToggle<CR>
+
+"--SYMBOLS-OUTLINE
+"----Default keymaps
+    "Key	        Action
+    "Escape	        Close outline
+    "Enter	        Go to symbol location in code
+    "o	            Go to symbol location in code without losing focus
+    "Ctrl+Space	    Hover current symbol
+    "K	            Toggles the current symbol preview
+    "r	            Rename symbol
+    "a	            Code actions
+    "h	            fold symbol
+    "l	            Unfold symbol
+    "W	            Fold all symbols
+    "E	            Unfold all symbols
+    "R	            Reset all folding
+    "?	            Show help message
+
+"--Highlights
+    "Highlight	                Purpose
+    "FocusedSymbol	            Highlight of the focused symbol
+    "Pmenu	                    Highlight of the preview popup windows
+    "SymbolsOutlineConnector	Highlight of the table connectors
+    "Comment	                Highlight of the info virtual text
+
+"--TELESCOPE
+nnoremap <leader>fb :Telescope file_browser path=%:p:h select_buffer=true<CR>
+nnoremap <leader>fp :Telescope project path=%:p:h select_buffer=true<CR>
+"inoremap <C-A-l> <ESC>:Telescope buffers<CR>
+"nnoremap <C-A-l> <ESC>:Telescope buffers<CR>
+inoremap <C-A-f> <ESC>:Telescope find_files<CR>
+nnoremap <C-A-f> <ESC>:Telescope find_files<CR>
+inoremap <C-A-g> <ESC>:Telescope grep_string<CR>
+nnoremap <C-A-g> <ESC>:Telescope grep_string<CR>
+
+
