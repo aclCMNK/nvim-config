@@ -43,4 +43,5 @@ require('lualine').setup {
   extensions = {}
 }
 
+
 EOF

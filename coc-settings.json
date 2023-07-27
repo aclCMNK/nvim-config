@@ -37,25 +37,27 @@
             "css",
             "csharp",
             "gdscript",
-            "html"
+            "html",
+            "js"
         ]
     },
-    "prettier": {
-        "bracketSpacing": true,
-        "semi": true,
-        "enable": true,
-        "tabWidth": 4,
-        "eslintIntegration": true,
-        "formatterPriority": 1,
-        "formatOnSave": true,
-        "bracketSameLine": true,
-        "arrowParens": "avoid"
+    "codeLens.enable": true,
+    "colors.enable": true,
+    "suggest.labelMaxLength": 50,
+    "suggest.snippetIndicator": " \ue796",
+    "suggest.timeout": 5000,
+    "suggest.triggerCompletionWait": 30,
+    "suggest.removeDuplicateItems": true,
+    "suggest.virtualText": true,
+    "suggest.filterGraceful": true,
+    "suggest.noselect": true,
+    "suggest.floatConfig": {
+        "border": true,
+        "rounded": true
     },
-    "coc.preferences.formatOnSave": true,
-    "diagnostic.errorSign": "",
-    "diagnostic.warningSign": "",
-    "diagnostic.infoSign": "",
-    "diagnostic.hintSign": "",
+    "suggest.formatItems": ["kind", "shortcut", "abbr", "menu"],
+    "suggest.defaultSortMethod": "alphabetical",
+    "suggest.selection": "first",
     "suggest.completionItemKindLabels": {
         "method": "  ",
         "function": "  ",
@@ -82,5 +84,42 @@
         "constructor": "  ",
         "value": "  ",
         "enumMember": "  "
-    }
+    },
+    "coc.preferences.floatActions": true,
+    "coc.preferences.formatOnSave": true,
+    "coc.preferences.enableMessageDialog": true,
+    "diagnostic.level": "hint",
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": true,
+    "diagnostic.virtualTextWinCol": 60,
+    "diagnostic.virtualTextFormat": "%message",
+    "diagnostic.virtualTextPrefix": " ❯❯❯ ",
+    "dialog.floatBorderHighlight": "rounded",
+    "diagnostic.errorSign": "",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic.hintSign": "",
+    "diagnostic.floatConfig": {
+        "rounded": true,
+        "border": true
+    },
+    "list.indicator": "❯",
+    "prettier": {
+        "bracketSpacing": true,
+        "semi": true,
+        "enable": true,
+        "tabWidth": 4,
+        "eslintIntegration": true,
+        "formatterPriority": 1,
+        "formatOnSave": true,
+        "bracketSameLine": true,
+        "arrowParens": "avoid"
+    },
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.inlayHints.parameterNames.enabled": "literals",
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true
 }

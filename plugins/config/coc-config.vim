@@ -20,6 +20,3 @@ augroup mygroup
     autocmd!
     autocmd FileType cs call SetupCSharp()
 augroup end
-
-autocmd CursorHold * silent call CocActionAsync('highlight')
-autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')

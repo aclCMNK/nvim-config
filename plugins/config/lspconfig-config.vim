@@ -13,7 +13,7 @@ lspconfig.tsserver.setup{
         -- For example, you can configure mappings or additional settings here
         -- Enable auto-formatting on save (optional)
         --vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)')
-        require("lsp-format").on_attach(client) 
+        --require("lsp-format").on_attach(client) 
 
         -- Enable JavaScript specific diagnostics
         client.server_capabilities.document_formatting = false
@@ -27,9 +27,9 @@ lspconfig.tsserver.setup{
             }
         )
 
-        local basics = require('lsp_basics')
-        basics.make_lsp_commands(client, bufnr)
-        basics.make_lsp_mappings(client, bufnr)
+        --local basics = require('lsp_basics')
+        --basics.make_lsp_commands(client, bufnr)
+        --basics.make_lsp_mappings(client, bufnr)
     end,
     flags = {
         debounce_text_changes = 150,
@@ -40,7 +40,7 @@ lspconfig.tsserver.setup{
     indent = {
         enable = true
     },
-    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    --capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     settings = {
         -- TypeScript-specific settings
         TypeScript = {
@@ -85,7 +85,7 @@ lspconfig.html.setup{
         -- For example, you can configure mappings or additional settings here
         -- Enable auto-formatting on save (optional)
     end,
-    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    --capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     treesitter = {
         enable = true
     }
@@ -93,14 +93,15 @@ lspconfig.html.setup{
 
 -- Configure cssls as the LSP for CSS files
 lspconfig.cssls.setup{
-    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    --capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     on_attach = function(client)
-        require("lsp-format").on_attach(client) 
+        --require("lsp-format").on_attach(client) 
     end
 }
 
 
 -- Autocompletion with nvim-compe
+--[[
 require('compe').setup{
     enabled = true,
     autocomplete = true,
@@ -132,13 +133,13 @@ cmp.setup({
         format = require'lspkind'.cmp_format({ with_text = false, maxwidth = 50 })
     }
 })
-
+]]--
 
 EOF
 
 
 lua << EOF
-
+--[[
 require('lspkind').init({
     -- defines how annotations are shown
     -- default: symbol
@@ -180,7 +181,7 @@ require('lspkind').init({
       TypeParameter = "",
     },
 })
-
+]]--
 EOF
 
 

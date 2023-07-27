@@ -52,6 +52,9 @@ return require('packer').startup(function(use)
         }
     }
 
+--lsp
+    use { 'neovim/nvim-lspconfig' }
+    use { 'simrat39/symbols-outline.nvim' }
 --[[lsp
     use { 'neovim/nvim-lspconfig' }
     use { 'kabouzeid/nvim-lspinstall' }  -- Optional: makes installing LSP servers easier
@@ -162,10 +165,10 @@ source $HOME/.config/nvim/plugins/config/indent-blankline-config.vim
 
 "
 "LSP Plugins config
-"source $HOME/.config/nvim/plugins/config/lspconfig-config.vim
+source $HOME/.config/nvim/plugins/config/lspconfig-config.vim
 "source $HOME/.config/nvim/plugins/config/lsp-basics-config.vim
 "source $HOME/.config/nvim/plugins/config/lspUI-config.vim
 "source $HOME/.config/nvim/plugins/config/goto-preview-config.vim
 "source $HOME/.config/nvim/plugins/config/inc-rename-config.vim
-"source $HOME/.config/nvim/plugins/config/symbols-outline-config.vim
+source $HOME/.config/nvim/plugins/config/symbols-outline-config.vim
 "

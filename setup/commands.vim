@@ -194,3 +194,4 @@ command! Symbols :SymbolsOutline
 "--TELESCOPE
 command! Projects :Telescope workspaces
 
+autocmd CursorHold * silent call CocActionAsync('highlight')
