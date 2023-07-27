@@ -1,4 +1,16 @@
 lua << EOF
+
+print(vim.fn.stdpath('data'))
+-- Function to check if a plugin is installed
+local function packer_install_if_missing(name)
+    local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/'..name
+    if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+        vim.cmd('!git clone https://github.com/'..name..' '..install_path)
+        vim.cmd('packadd '..name)
+        print('Plugin "'..name..'" installed automatically.')
+    end
+end
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
