@@ -1,1 +1,1 @@
-colorscheme oxocarbon
+colorscheme calvera

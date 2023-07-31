@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
     use { "lukas-reineke/indent-blankline.nvim" }
 	use { 'charludo/projectmgr.nvim' }
 
+
  --GIT
     use { 'tpope/vim-fugitive' }
     use {
@@ -67,6 +68,17 @@ return require('packer').startup(function(use)
 --lsp
     use { 'neovim/nvim-lspconfig' }
     use { 'simrat39/symbols-outline.nvim' }
+	--use { "loctvl842/breadcrumb.nvim", requires = {"nvim-tree/nvim-web-devicons" } }
+	use {
+		"SmiteshP/nvim-navbuddy",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"SmiteshP/nvim-navic",
+			"MunifTanjim/nui.nvim",
+			"numToStr/Comment.nvim",        -- Optional
+			"nvim-telescope/telescope.nvim" -- Optional
+		}
+	}
 --[[lsp
     use { 'neovim/nvim-lspconfig' }
     use { 'kabouzeid/nvim-lspinstall' }  -- Optional: makes installing LSP servers easier
@@ -87,16 +99,6 @@ return require('packer').startup(function(use)
         end,
     }
     use { 'simrat39/symbols-outline.nvim' }
-    use {
-        "SmiteshP/nvim-navbuddy",
-        requires = {
-            "neovim/nvim-lspconfig",
-            "SmiteshP/nvim-navic",
-            "MunifTanjim/nui.nvim",
-            "numToStr/Comment.nvim",        -- Optional
-            "nvim-telescope/telescope.nvim" -- Optional
-        }
-    }
     use 'nanotee/nvim-lsp-basics'
     use {
         "jinzhongjia/LspUI.nvim"
@@ -170,9 +172,10 @@ source $HOME/.config/nvim/plugins/config/multiple-cursors-config.vim
 source $HOME/.config/nvim/plugins/config/wilder-config.vim
 source $HOME/.config/nvim/plugins/config/no-neck-pain-config.vim
 source $HOME/.config/nvim/plugins/config/indent-blankline-config.vim
+source $HOME/.config/nvim/plugins/config/nvim-navbuddy-config.vim
+"source $HOME/.config/nvim/plugins/config/breadcrumb-config.vim
 "source $HOME/.config/nvim/plugins/config/dashboard-nvim.vim
 
-"source $HOME/.config/nvim/plugins/config/navbuddy-config.vim
 "source $HOME/.config/nvim/plugins/config/lsplines-config.vim
 
 "

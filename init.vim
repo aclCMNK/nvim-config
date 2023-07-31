@@ -69,7 +69,7 @@ if term_program !=? 'Apple_Terminal'
     set termguicolors
 else
     if $TERM !=? 'xterm-256color'
-		set termguicolors
+        set termguicolors
     endif
 endif
 set t_Co=256

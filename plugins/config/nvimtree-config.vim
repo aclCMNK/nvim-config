@@ -9,11 +9,6 @@ require("nvim-tree").setup({
 		side = 'bottom',
 		centralize_selection = true,
 		number = false,
-		mappings = {
-			list = {
-				{ key = "u", action = "dir_up" },
-			},
-		},
 		signcolumn = "yes",
 		float = {
 			enable = true,
@@ -29,17 +24,17 @@ require("nvim-tree").setup({
 			}
 		},
 	},
-	--diagnostics = {
-    --    enable = true,
-    --    show_on_dirs = true,
-    --    debounce_delay = 50,
-    --    icons = {
-    --      hint = "",
-    --      info = "",
-    --      warning = "",
-    --      error = "",
-    --    },
-    --  },
+	diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        debounce_delay = 50,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        },
+      },
 	renderer = {
 		highlight_opened_files = "all",
 		root_folder_modifier = ":p:.",

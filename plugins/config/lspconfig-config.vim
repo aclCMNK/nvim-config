@@ -3,6 +3,9 @@ lua << EOF
 -- Servers list
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lspconfig = require('lspconfig')
+--local breadcrumb = require("breadcrumb")
+local navbuddy = require("nvim-navbuddy")
+local navic = require("nvim-navic")
 
 -- Configure tsserver as the LSP for JavaScript and TypeScript
 lspconfig.tsserver.setup{
@@ -26,6 +29,11 @@ lspconfig.tsserver.setup{
                 update_in_insert = true,
             }
         )
+		navbuddy.attach(client, bufnr)
+		navic.attach(client, bufnr)
+		--if client.server_capabilities.documentSymbolProvider then
+			--breadcrumb.attach(client, bufnr)
+		--end
 
         --local basics = require('lsp_basics')
         --basics.make_lsp_commands(client, bufnr)
@@ -75,12 +83,14 @@ lspconfig.html.setup{
         enable = true
     },
     single_file_support = true,
-    on_attach = function(client)
+    on_attach = function(client, bufnr)
         -- Attach JavaScript LSP server
         if client.name == "html" then
             require('lspconfig').tsserver.setup{ on_attach = client.on_attach }
             require('lspconfig').cssls.setup{ on_attach = client.on_attach }
         end
+		navbuddy.attach(client, bufnr)
+		navic.attach(client, bufnr)
         -- Customizations when the LSP client attaches
         -- For example, you can configure mappings or additional settings here
         -- Enable auto-formatting on save (optional)
@@ -94,9 +104,21 @@ lspconfig.html.setup{
 -- Configure cssls as the LSP for CSS files
 lspconfig.cssls.setup{
     --capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-    on_attach = function(client)
-        --require("lsp-format").on_attach(client) 
+    on_attach = function(client, bufnr)
+		navbuddy.attach(client, bufnr)
+		navic.attach(client, bufnr)
+        --require("lsp-format").on_attach(client)
     end
+}
+
+lspconfig.rust_analyzer.setup{
+	filetypes = { "rustup", "run", "stable", "rust-analyzer" },
+	cmd = { "rust-analyzer" },
+	--root_dir = root_pattern("Cargo.toml"),
+	on_attach = function(client, bufnr)
+		navbuddy.attach(client, bufnr)
+		navic.attach(client, bufnr)
+	end
 }
 
 

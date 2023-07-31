@@ -5,7 +5,7 @@ local actions = require("nvim-navbuddy.actions")
 
 navbuddy.setup {
     window = {
-        border = "single",  -- "rounded", "double", "solid", "none"
+        border = {"┏", "━" ,"┓", "┃", "┛", "━", "┗", "┃" },  -- "rounded", "double", "solid", "none"
                             -- or an array with eight chars building up the border in a clockwise fashion
                             -- starting with the top-left corner. eg: { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" }.
         size = "60%",       -- Or table format example: { height = "40%", width = "100%"}
@@ -78,6 +78,8 @@ navbuddy.setup {
 
         ["h"] = actions.parent(),           -- Move to left panel
         ["l"] = actions.children(),         -- Move to right panel
+        ["<LEFT>"] = actions.parent(),           -- Move to left panel
+        ["<RIGHT>"] = actions.children(),         -- Move to right panel
         ["0"] = actions.root(),             -- Move to first panel
 
         ["v"] = actions.visual_name(),      -- Visual selection of name
@@ -107,6 +109,11 @@ navbuddy.setup {
         ["J"] = actions.move_down(),        -- Move focused node down
         ["K"] = actions.move_up(),          -- Move focused node up
 
+        ["s"] = actions.toggle_preview(),   -- Show preview of current node
+
+        ["<C-v>"] = actions.vsplit(),       -- Open selected node in a vertical split
+        ["<C-s>"] = actions.hsplit(),       -- Open selected node in a horizontal split
+
         ["t"] = actions.telescope({         -- Fuzzy finder at current level.
             layout_config = {               -- All options that can be
                 height = 0.60,              -- passed to telescope.nvim's
@@ -130,6 +137,3 @@ navbuddy.setup {
         scrolloff = nil        -- scrolloff value when navbuddy is open
     }
 }
-
-EOF
-

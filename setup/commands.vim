@@ -189,9 +189,11 @@ command! MementoClear :lua require("memento").clear_history()
 command! StartupScreen :lua show_dashboard(1)
 
 "--SYMBOLS-OUTLINE
-command! Symbols :SymbolsOutline
+command! Symbols2 :SymbolsOutline
 
 "--TELESCOPE
 command! Projects :Telescope workspaces
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+command! Symbols :Navbuddy

@@ -13,14 +13,14 @@
                 "Lua": {
                     "runtime": {
                         "version": "LuaJIT",
-                        "path": "/usr/bin/luajit" // Replace with the path to your LuaJIT installation
+                        "path": "/usr/bin/luajit"
                     },
                     "diagnostics": {
                         "globals": ["vim, lua"]
                     },
                     "workspace": {
                         "library": {
-                            "/usr/share/nvim/runtime/lua": true // Replace with the path to your Neovim runtime Lua files
+                            "/usr/share/nvim/runtime/lua": true
                         }
                     }
                 }
@@ -38,7 +38,10 @@
             "csharp",
             "gdscript",
             "html",
-            "js"
+            "js",
+            "rust",
+            "rs",
+            "lua"
         ]
     },
     "codeLens.enable": true,
