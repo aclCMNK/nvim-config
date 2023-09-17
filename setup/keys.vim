@@ -3,15 +3,17 @@ let mapleader = "\<Space>"
 lua vim.api.nvim_set_keymap('i', '<leader>', '<leader>', { silent = true })
 
 "--CLOSE EDITOR//////////////
-nnoremap <C-q> <ESC>:CloseAll<CR>
-inoremap <C-q> <ESC>:CloseAll<CR>
+"nnoremap <C-q> <ESC>:WSCloseAll<CR>
+"inoremap <C-q> <ESC>:WSCloseAll<CR>
+nnoremap <C-q> <ESC>:q!<CR>
+inoremap <C-q> <ESC>:q!<CR>
 "--IDENTATION////////////////
-imap <TAB> <ESC>:><CR>A
-nmap <TAB> <ESC>:><CR>
+imap <TAB> <ESC>>><ESC>a
+nnoremap <TAB> >>
 vmap <TAB> :><CR>
 "--BACK IDENTATION///////////
-imap <S-TAB> <ESC>:<<CR>A
-nmap <S-TAB> <ESC>:<<CR>
+imap <S-TAB> <ESC><<<ESC>a
+nmap <S-TAB> <<
 vmap <S-TAB> :<<CR>
 "--NEXT/PREV BUFFER//////////
 imap <leader><TAB> <ESC>:bnext<CR>
@@ -63,16 +65,19 @@ imap <A-f> <ESC>:Files<CR>
 nmap <A-f> <ESC>:Files<CR>
 vmap <A-f> <ESC>:Files<CR>
 "--CLOSE OPENED FIES
-nnoremap <A-q> <ESC>:CloseBuffer<CR>
-imap <A-d> <ESC>:CloseBuffer<CR>
+nnoremap <A-q> <ESC>:WSCloseBuffer<CR>
+imap <A-d> <ESC>:WSCloseBuffer<CR>
 "--MOVE UP 5 POINTS
 imap <S-UP> <ESC>:-5<CR>
 nmap <S-UP> <ESC>:-5<CR>
-vmap <S-UP> <ESC>:-5<CR>
+" Move cursor 5 lines up in visual mode
+xnoremap <S-Up> :<C-U>normal! gv5k<CR>
 "--MOVE DOWN 5 POINTS
 imap <S-DOWN> <ESC>:+5<CR>
 nmap <S-DOWN> <ESC>:+5<CR>
-vmap <S-DOWN> <ESC>:+5<CR>
+" Move cursor 5 lines down in visual mode
+xnoremap <S-Down> :<C-U>normal! gv5j<CR>
+
 "--UNDO
 imap <C-z> <ESC>:undo<CR>
 nmap <C-z> <ESC>:undo<CR>
@@ -102,8 +107,8 @@ nnoremap <C-r> <ESC>:source $HOME/.config/nvim/init.vim<CR>
 
 "PLUGINS:
 "--BUFFER MANAGER
-inoremap <C-A-l> <ESC>:OpenedFiles<CR>
-nnoremap <C-A-l> <ESC>:OpenedFiles<CR>
+inoremap <C-A-l> <ESC>:WSBuffers<CR>
+nnoremap <C-A-l> <ESC>:WSBuffers<CR>
 
 "--COC
 nnoremap <silent>gd :GotoDefinition<CR>
@@ -115,8 +120,14 @@ nmap <expr> <silent> <C-d> <SID>select_current_word()
 "--MEMENTO
 nnoremap <C-A-k> <ESC>:Memento<CR>
 
+"--MYTOOLS
+nnoremap <C-l> <ESC>:MyTools<CR>
+inoremap <C-l> <ESC>:MyTools<CR>
+
+
 "--NVIMTREE
 nnoremap <C-b> <ESC>:NvimTreeFindFileToggle<CR>
+inoremap <C-b> <ESC>:NvimTreeFindFileToggle<CR>
 
 "--SYMBOLS-OUTLINE
 "----Default keymaps
@@ -151,6 +162,5 @@ inoremap <C-A-f> <ESC>:Telescope find_files<CR>
 nnoremap <C-A-f> <ESC>:Telescope find_files<CR>
 inoremap <C-A-g> <ESC>:Telescope grep_string<CR>
 nnoremap <C-A-g> <ESC>:Telescope grep_string<CR>
-
 
 

@@ -31,6 +31,20 @@
             "filetypes": ["cs"],
             "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
         },
+        "haxe": {
+            "command": "node",
+            "args": [
+                "/home/kamiloid/.config/haxe-language-server/bin/server.js"
+            ],
+            "filetypes": ["haxe"],
+            "trace.server": "verbose",
+            "initializationOptions": {
+                "displayArguments": ["build.hxml"]
+            },
+            "settings": {
+                "haxe.executable": "haxe"
+            }
+        },
         "coc.preferences.formatOnSaveFiletypes": [
             "javascript",
             "json",
@@ -44,6 +58,16 @@
             "lua"
         ]
     },
+    "haxe.useModule": true,
+    "haxe.modulePath": "/home/kamiloid/.config/haxe-language-server/bin/server.js",
+    "coc.preferences.formatOnType": true,
+    "tsserver.enable": true,
+    "lua.enable": true,
+    "godot.enable": true,
+    "rust-analyzer.enable": true,
+    "rust-analyzer.debug.runtime": "termdebug",
+    "rust-analyzer.diagnostics.enable": true,
+    "rust-analyzer.workspace.symbol.search.kind": "all_symbols",
     "codeLens.enable": true,
     "colors.enable": true,
     "suggest.labelMaxLength": 50,
@@ -51,7 +75,7 @@
     "suggest.timeout": 5000,
     "suggest.triggerCompletionWait": 30,
     "suggest.removeDuplicateItems": true,
-    "suggest.virtualText": true,
+    "suggest.virtualText": false,
     "suggest.filterGraceful": true,
     "suggest.noselect": true,
     "suggest.floatConfig": {
@@ -92,7 +116,7 @@
     "coc.preferences.formatOnSave": true,
     "coc.preferences.enableMessageDialog": true,
     "diagnostic.level": "hint",
-    "diagnostic.virtualText": true,
+    "diagnostic.virtualText": false,
     "diagnostic.virtualTextCurrentLineOnly": true,
     "diagnostic.virtualTextWinCol": 60,
     "diagnostic.virtualTextFormat": "%message",
@@ -118,11 +142,11 @@
         "bracketSameLine": true,
         "arrowParens": "avoid"
     },
-    "javascript.inlayHints.variableTypes.enabled": true,
-    "javascript.inlayHints.parameterTypes.enabled": true,
-    "javascript.inlayHints.parameterNames.enabled": "literals",
-    "javascript.inlayHints.enumMemberValues.enabled": true,
-    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true
+    "javascript.inlayHints.variableTypes.enabled": false,
+    "javascript.inlayHints.parameterTypes.enabled": false,
+    "javascript.inlayHints.parameterNames.enabled": "none",
+    "javascript.inlayHints.enumMemberValues.enabled": false,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": false,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": false,
+    "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false
 }

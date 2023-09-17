@@ -24,7 +24,7 @@ require("nvim-tree").setup({
 			}
 		},
 	},
-	diagnostics = {
+	--[[diagnostics = {
         enable = true,
         show_on_dirs = true,
         debounce_delay = 50,
@@ -34,7 +34,7 @@ require("nvim-tree").setup({
           warning = "",
           error = "",
         },
-      },
+      },]]--
 	renderer = {
 		highlight_opened_files = "all",
 		root_folder_modifier = ":p:.",

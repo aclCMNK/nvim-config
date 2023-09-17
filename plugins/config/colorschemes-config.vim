@@ -233,5 +233,3 @@ end
 
 EOF
 
-command! ColorSchemePicker :lua ColorSchemePicker()
-command! MaterialStyles :lua require('material.functions').toggle_style()

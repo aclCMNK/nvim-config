@@ -35,7 +35,7 @@ require('neoclip').setup({
         telescope = {
           i = {
             select = '<cr>',
-            paste = '<c-p>',
+			paste = {'<c-p>', '<cr>'},
             paste_behind = '<c-k>',
             replay = '<c-q>',  -- replay a macro
             delete = '<c-d>',  -- delete an entry
@@ -44,7 +44,7 @@ require('neoclip').setup({
           },
           n = {
             select = '<cr>',
-            paste = 'p',
+			paste = {'p', '<cr>'},
             --- It is possible to map to more than one key.
             -- paste = { 'p', '<c-p>' },
             paste_behind = 'P',

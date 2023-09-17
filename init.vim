@@ -17,6 +17,9 @@ set splitbelow splitright
 set t_Co=256
 set nowrap!
 set incsearch
+"set foldmethod=syntax
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
 filetype plugin indent on
 syntax on
 set timeoutlen=100

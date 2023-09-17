@@ -3,6 +3,11 @@ lua << EOF
 -- Servers list
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lspconfig = require('lspconfig')
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
+local rust_tools = require("rust-tools")
+mason.setup()
+mason_lspconfig.setup()
 --local breadcrumb = require("breadcrumb")
 local navbuddy = require("nvim-navbuddy")
 local navic = require("nvim-navic")
@@ -16,15 +21,15 @@ lspconfig.tsserver.setup{
         -- For example, you can configure mappings or additional settings here
         -- Enable auto-formatting on save (optional)
         --vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)')
-        --require("lsp-format").on_attach(client) 
+        --require("lsp-format").on_attach(client)
 
         -- Enable JavaScript specific diagnostics
         client.server_capabilities.document_formatting = false
-        client.server_capabilities.document_range_formatting = false       
+        client.server_capabilities.document_range_formatting = false
         vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
             vim.lsp.diagnostic.on_publish_diagnostics, {
                 underline = true,
-                virtual_text = true,
+                virtual_text = false,
                 signs = true,
                 update_in_insert = true,
             }
@@ -48,6 +53,9 @@ lspconfig.tsserver.setup{
     indent = {
         enable = true
     },
+	treesitter = {
+		enable = true
+	},
     --capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     settings = {
         -- TypeScript-specific settings
@@ -120,7 +128,31 @@ lspconfig.rust_analyzer.setup{
 		navic.attach(client, bufnr)
 	end
 }
+rust_tools.setup{
+	on_attach = function(client, bufnr)
+		navbuddy.attach(client, bufnr)
+		navic.attach(client, bufnr)
+	end
+}
 
+lspconfig.vimls.setup{}
+lspconfig.lua_ls.setup{}
+lspconfig.csharp_ls.setup{}
+lspconfig.gdscript.setup{}
+lspconfig.jsonls.setup{}
+
+lspconfig.haxe_language_server.setup{
+	cmd = { "node", "/home/kamiloid/.config/haxe-language-server/bin/server.js" },
+	filetypes = { "haxe" },
+	init_options = {
+		displayArguments = { "build.hxml" }
+	},
+	settings = {
+		haxe = {
+			executable = "haxe"
+		}
+	}
+}
 
 -- Autocompletion with nvim-compe
 --[[

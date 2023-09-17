@@ -54,6 +54,9 @@ return require('packer').startup(function(use)
     use { "shortcuts/no-neck-pain.nvim", tag = "*" }
     use { "lukas-reineke/indent-blankline.nvim" }
 	use { 'charludo/projectmgr.nvim' }
+	use { 'anuvyklack/fold-preview.nvim',
+		requires = 'anuvyklack/keymap-amend.nvim'
+	}
 
 
  --GIT
@@ -67,6 +70,8 @@ return require('packer').startup(function(use)
 
 --lsp
     use { 'neovim/nvim-lspconfig' }
+	use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
     use { 'simrat39/symbols-outline.nvim' }
 	--use { "loctvl842/breadcrumb.nvim", requires = {"nvim-tree/nvim-web-devicons" } }
 	use {
@@ -79,13 +84,7 @@ return require('packer').startup(function(use)
 			"nvim-telescope/telescope.nvim" -- Optional
 		}
 	}
---[[lsp
-    use { 'neovim/nvim-lspconfig' }
-    use { 'kabouzeid/nvim-lspinstall' }  -- Optional: makes installing LSP servers easier
-    use { 'hrsh7th/nvim-cmp' }
-    use { 'hrsh7th/cmp-nvim-lsp' }
-    use { 'hrsh7th/nvim-compe' }  -- Optional: for autocompletion support
-    use { 'onsails/lspkind-nvim' }
+	use 'simrat39/rust-tools.nvim'
     use {
         'rmagatti/goto-preview',
         config = function()
@@ -98,7 +97,11 @@ return require('packer').startup(function(use)
             require("inc_rename").setup()
         end,
     }
-    use { 'simrat39/symbols-outline.nvim' }
+--[[lsp
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/nvim-compe' }  -- Optional: for autocompletion support
+    use { 'onsails/lspkind-nvim' }
     use 'nanotee/nvim-lsp-basics'
     use {
         "jinzhongjia/LspUI.nvim"
@@ -156,7 +159,6 @@ source $HOME/.config/nvim/plugins/config/telescope-config.vim
 source $HOME/.config/nvim/plugins/config/treesitter-config.vim
 source $HOME/.config/nvim/plugins/config/incline-config.vim
 source $HOME/.config/nvim/plugins/config/evil-lualine-config.vim
-source $HOME/.config/nvim/plugins/config/bufferline-config.vim
 source $HOME/.config/nvim/plugins/config/startup-config.vim
 source $HOME/.config/nvim/plugins/config/cursorword-config.vim
 source $HOME/.config/nvim/plugins/config/memento-config.vim
@@ -173,17 +175,19 @@ source $HOME/.config/nvim/plugins/config/wilder-config.vim
 source $HOME/.config/nvim/plugins/config/no-neck-pain-config.vim
 source $HOME/.config/nvim/plugins/config/indent-blankline-config.vim
 source $HOME/.config/nvim/plugins/config/nvim-navbuddy-config.vim
-"source $HOME/.config/nvim/plugins/config/breadcrumb-config.vim
-"source $HOME/.config/nvim/plugins/config/dashboard-nvim.vim
 
-"source $HOME/.config/nvim/plugins/config/lsplines-config.vim
+source $HOME/.config/nvim/plugins/config/fold-preview-config.vim
 
-"
 "LSP Plugins config
 source $HOME/.config/nvim/plugins/config/lspconfig-config.vim
+source $HOME/.config/nvim/plugins/config/goto-preview-config.vim
+source $HOME/.config/nvim/plugins/config/symbols-outline-config.vim
+source $HOME/.config/nvim/plugins/config/inc-rename-config.vim
+
+"COMMENTED PLUGINS
+"source $HOME/.config/nvim/plugins/config/lsplines-config.vim
+"source $HOME/.config/nvim/plugins/config/breadcrumb-config.vim
+"source $HOME/.config/nvim/plugins/config/dashboard-nvim.vim
 "source $HOME/.config/nvim/plugins/config/lsp-basics-config.vim
 "source $HOME/.config/nvim/plugins/config/lspUI-config.vim
-"source $HOME/.config/nvim/plugins/config/goto-preview-config.vim
-"source $HOME/.config/nvim/plugins/config/inc-rename-config.vim
-source $HOME/.config/nvim/plugins/config/symbols-outline-config.vim
-"
+"source $HOME/.config/nvim/plugins/config/bufferline-config.vim

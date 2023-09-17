@@ -9,6 +9,7 @@ call plug#begin()
 	Plug 'junegunn/fzf', {'dir': '~/.fzf','do': './install --all'}
 	Plug 'junegunn/fzf.vim' " needed for previews
 	Plug 'antoinemadec/coc-fzf'
+	Plug 'jdonaldson/vaxe'
 	
 " post install (yarn install | npm install) then load plugin only for editing supported files
 "	Plug 'prettier/vim-prettier', {

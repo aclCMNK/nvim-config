@@ -1,1 +1,1 @@
-colorscheme calvera
+colorscheme tokyodark
