@@ -132,6 +132,7 @@
     },
     "list.indicator": "❯",
     "prettier": {
+        "printWidth": 200,
         "bracketSpacing": true,
         "semi": true,
         "enable": true,

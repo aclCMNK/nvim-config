@@ -97,3 +97,6 @@ source $HOME/.config/nvim/setup/keys.vim
 hi Pmenu guibg=#2b2b2b guifg=#666666
 hi PmenuSel guibg=#455861 guifg=#74a9c2
 
+" Set the completion popup options
+set pumheight=15                   " Set the maximum height of the popup
+set pumblend=0                    " Set the transparency level of the popup

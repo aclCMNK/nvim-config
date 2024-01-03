@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
 	use { 'anuvyklack/fold-preview.nvim',
 		requires = 'anuvyklack/keymap-amend.nvim'
 	}
+	--use { 'nvim-focus/focus.nvim' }
 
 
  --GIT
@@ -177,6 +178,7 @@ source $HOME/.config/nvim/plugins/config/indent-blankline-config.vim
 source $HOME/.config/nvim/plugins/config/nvim-navbuddy-config.vim
 
 source $HOME/.config/nvim/plugins/config/fold-preview-config.vim
+"source $HOME/.config/nvim/plugins/config/focus-config.vim
 
 "LSP Plugins config
 source $HOME/.config/nvim/plugins/config/lspconfig-config.vim

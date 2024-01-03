@@ -187,6 +187,14 @@ EOF
 
 lua << EOF
 
+function Expand_window()
+	vim.cmd('wincmd 80|')
+	vim.cmd('wincmd 25_')
+	vim.cmd('resize')
+end
+
+--vim.cmd([[autocmd WinEnter * lua Expand_window()]])
+
 EOF
 
 
@@ -199,6 +207,9 @@ command! -nargs=* -complete=file WSSearchAll call SearchAll(<q-args>)
 command! -nargs=* -complete=file WSReplaceAll call ReplaceAll(<q-args>)
 command! -nargs=* -complete=file WSReplaceInLine call ReplaceInLine(<q-args>)
 
+"RESIZE WINDOW:
+command! Fullscreen :lua Expand_window()
+command! NoFullscreen :wincmd =
 
 "PLUGINS:
 "--BUFFER MANAGER

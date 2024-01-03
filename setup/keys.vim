@@ -102,7 +102,7 @@ nnoremap <leader>fa <ESC>:SearchAll
 
 nnoremap <C-r> <ESC>:source $HOME/.config/nvim/init.vim<CR>
 
-
+nnoremap <leader>fs <ESC>:Fullscreen<CR>
 
 
 "PLUGINS:

@@ -1,1 +1,1 @@
-colorscheme tokyodark
+colorscheme nightfly

@@ -249,10 +249,6 @@ augroup CompePopup
   autocmd ColorScheme * highlight CompeDocumentationBorder guifg=#ffffff guibg=#61afef gui=bold
 augroup END
 
-" Set the completion popup options
-set pumheight=10                   " Set the maximum height of the popup
-set pumblend=5                    " Set the transparency level of the popup
-
 " Customize the appearance of the completion popup
 highlight Pmenu           guibg=#282c34 guifg=#abb2bf
 highlight PmenuSel        guibg=#61afef guifg=#ffffff gui=bold
