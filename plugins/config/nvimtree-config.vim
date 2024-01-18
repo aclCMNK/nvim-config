@@ -6,7 +6,7 @@ require("nvim-tree").setup({
 	view = {
 		adaptive_size = false,
 		--height = 15,
-		side = 'bottom',
+		side = 'right',
 		centralize_selection = true,
 		number = false,
 		signcolumn = "yes",
@@ -19,7 +19,7 @@ require("nvim-tree").setup({
 				width = 50,
 				height = 30,
 				row = 100 - 1,
-				col = 200 - 1,
+				col = 220 - 1,
 				zindex = 3000
 			}
 		},

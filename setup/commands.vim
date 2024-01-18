@@ -268,6 +268,8 @@ command! WSReplaceInLineComp :lua ReplaceInLine()
 
 command! PreviewFold :lua PreviewFold()
 
+command! Vifm FloatermNew vifm ./ ./
+
 lua << EOF
 package.path = package.path .. ";/home/kamiloid/.config/nvim/components/?.lua"
 local Mytools = require("my-tools")
@@ -284,6 +286,9 @@ Add2MyTools("Files", "Files")
 Add2MyTools("WSProjs", "Projects list")
 Add2MyTools("Telescope project path=%:p:h select_buffer=true", "Folders in Projects")
 Add2MyTools("Telescope grep_string", "Search text in project")
+
+AddSeparator("Browsers")
+Add2MyTools("Vifm", "Vifm")
 
 AddSeparator("WorkSpace")
 Add2MyTools("WSBuffers", "Opened files")

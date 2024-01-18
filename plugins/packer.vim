@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
 -- General plugins
+	use { 'voldikss/vim-floaterm' }
     use {'kyazdani42/nvim-web-devicons'}
     use { 'nvim-lua/plenary.nvim' }
     use {
@@ -28,7 +29,8 @@ return require('packer').startup(function(use)
         end,
     }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.2' }
-	use { 'fannheyward/telescope-coc.nvim' }
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.2' }
+    use { 'fannheyward/telescope-coc.nvim' }
     use {
         "nvim-telescope/telescope-file-browser.nvim",
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
@@ -53,11 +55,41 @@ return require('packer').startup(function(use)
     use { 'gelguy/wilder.nvim' }
     use { "shortcuts/no-neck-pain.nvim", tag = "*" }
     use { "lukas-reineke/indent-blankline.nvim" }
-	use { 'charludo/projectmgr.nvim' }
-	use { 'anuvyklack/fold-preview.nvim',
-		requires = 'anuvyklack/keymap-amend.nvim'
-	}
-	--use { 'nvim-focus/focus.nvim' }
+    use { 'charludo/projectmgr.nvim' }
+    use { 'anuvyklack/fold-preview.nvim',
+        requires = 'anuvyklack/keymap-amend.nvim'
+    }
+    --use { 'nvim-focus/focus.nvim' }
+
+--lsp
+    use { 'neovim/nvim-lspconfig' }
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use { 'simrat39/symbols-outline.nvim' }
+    --use { "loctvl842/breadcrumb.nvim", requires = {"nvim-tree/nvim-web-devicons" } }
+    use {
+        "SmiteshP/nvim-navbuddy",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+            "numToStr/Comment.nvim",        -- Optional
+            "nvim-telescope/telescope.nvim" -- Optional
+        }
+    }
+    use 'simrat39/rust-tools.nvim'
+    use {
+        'rmagatti/goto-preview',
+        config = function()
+            require('goto-preview').setup {}
+        end
+    }
+    use {
+        "smjonas/inc-rename.nvim",
+        config = function()
+            require("inc_rename").setup()
+        end,
+    }
 
 
  --GIT
@@ -98,6 +130,7 @@ return require('packer').startup(function(use)
             require("inc_rename").setup()
         end,
     }
+
 --[[lsp
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-nvim-lsp' }
@@ -118,6 +151,22 @@ return require('packer').startup(function(use)
     })
 --]]
 
+-- Statuslines and Tablines
+    use { "b0o/incline.nvim" }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+
+-- Startups
+    use {
+        "startup-nvim/startup.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    }
+    --use { 'glepnir/dashboard-nvim' }
+
+
 -- Colorschemes
     use { 'tiagovla/tokyodark.nvim'}
     use { 'folke/lsp-colors.nvim' }
@@ -133,26 +182,12 @@ return require('packer').startup(function(use)
     use { "bluz71/vim-nightfly-colors", as = "nightfly" }
     use { 'marko-cerovac/material.nvim' }
 
--- Statuslines and Tablines
-    use { "b0o/incline.nvim" }
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
-
--- Startups
-    use {
-        "startup-nvim/startup.nvim",
-        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-    }
-	--use { 'glepnir/dashboard-nvim' }
-
 -- CursorStyles
     use { 'xiyaowong/nvim-cursorword' }
 
 end)
 EOF
+
 
 source $HOME/.config/nvim/plugins/config/colorschemes-config.vim
 source $HOME/.config/nvim/plugins/config/nvimtree-config.vim
