@@ -269,6 +269,7 @@ command! WSReplaceInLineComp :lua ReplaceInLine()
 command! PreviewFold :lua PreviewFold()
 
 command! Vifm FloatermNew vifm ./ ./
+command! Broot FloatermNew broot ~
 
 lua << EOF
 package.path = package.path .. ";/home/kamiloid/.config/nvim/components/?.lua"
@@ -287,8 +288,14 @@ Add2MyTools("WSProjs", "Projects list")
 Add2MyTools("Telescope project path=%:p:h select_buffer=true", "Folders in Projects")
 Add2MyTools("Telescope grep_string", "Search text in project")
 
-AddSeparator("Browsers")
+AddSeparator("Terminal Tools")
 Add2MyTools("Vifm", "Vifm")
+Add2MyTools("Broot", "Broot: Find files")
+Add2MyTools("RG", "Rg: Search text")
+Add2MyTools("WSTerminalToggle", "Toggle Terminal")
+Add2MyTools("WSTerminalExit", "Kill Terminal")
+Add2MyTools("FloatermNew lazygit", "LazyGit")
+Add2MyTools("FloatermNew --width=0.45 --height=0.9 --position=right nvim ./", "Nvim - SubEditor")
 
 AddSeparator("WorkSpace")
 Add2MyTools("WSBuffers", "Opened files")
@@ -322,11 +329,6 @@ AddSeparator("Editor")
 Add2MyTools("NoNeckPain", "Zen Mode")
 Add2MyTools("WSColorSchemePicker", "ColorScheme")
 Add2MyTools("MaterialStyles", "Material Styles Selector")
-
-AddSeparator("Terminal")
-Add2MyTools("WSTerminalToggle", "Toggle Terminal")
-Add2MyTools("WSTerminalExit", "Kill Terminal")
-Add2MyTools("Lgit", "LazyGit")
 
 AddSeparator("Close")
 Add2MyTools("WSCloseBuffer", "Close buffer")
