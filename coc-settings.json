@@ -124,7 +124,7 @@
 	"suggest.timeout": 5000,
 	"suggest.triggerCompletionWait": 30,
 	"suggest.removeDuplicateItems": true,
-	"suggest.virtualText": false,
+	"suggest.virtualText": true,
 	"suggest.filterGraceful": true,
 	"suggest.noselect": true,
 	"suggest.floatConfig": {

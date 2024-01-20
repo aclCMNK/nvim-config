@@ -90,6 +90,7 @@ return require('packer').startup(function(use)
             require("inc_rename").setup()
         end,
     }
+	use 'mfussenegger/nvim-lint'
 
 
  --GIT
