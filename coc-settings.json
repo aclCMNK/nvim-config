@@ -1,153 +1,207 @@
 {
-    "languageserver": {
-        "godot": {
-            "host": "127.0.0.1",
-            "filetypes": ["gd", "gdscript", "gdscript3"],
-            "port": 6005
-        },
-        "lua": {
-            "command": "lua-language-server",
-            "filetypes": ["vim, lua"],
-            "rootPatterns": ["lua.config.json"],
-            "settings": {
-                "Lua": {
-                    "runtime": {
-                        "version": "LuaJIT",
-                        "path": "/usr/bin/luajit"
-                    },
-                    "diagnostics": {
-                        "globals": ["vim, lua"]
-                    },
-                    "workspace": {
-                        "library": {
-                            "/usr/share/nvim/runtime/lua": true
-                        }
-                    }
-                }
-            }
-        },
-        "csharp-ls": {
-            "command": "csharp-ls",
-            "filetypes": ["cs"],
-            "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
-        },
-        "haxe": {
-            "command": "node",
-            "args": [
-                "/home/kamiloid/.config/haxe-language-server/bin/server.js"
-            ],
-            "filetypes": ["haxe"],
-            "trace.server": "verbose",
-            "initializationOptions": {
-                "displayArguments": ["build.hxml"]
-            },
-            "settings": {
-                "haxe.executable": "haxe"
-            }
-        },
-        "coc.preferences.formatOnSaveFiletypes": [
-            "javascript",
-            "json",
-            "css",
-            "csharp",
-            "gdscript",
-            "html",
-            "js",
-            "rust",
-            "rs",
-            "lua"
-        ]
-    },
-    "haxe.useModule": true,
-    "haxe.modulePath": "/home/kamiloid/.config/haxe-language-server/bin/server.js",
-    "coc.preferences.formatOnType": true,
-    "tsserver.enable": true,
-    "lua.enable": true,
-    "godot.enable": true,
-    "rust-analyzer.enable": true,
-    "rust-analyzer.debug.runtime": "termdebug",
-    "rust-analyzer.diagnostics.enable": true,
-    "rust-analyzer.workspace.symbol.search.kind": "all_symbols",
-    "codeLens.enable": true,
-    "colors.enable": true,
-    "suggest.labelMaxLength": 50,
-    "suggest.snippetIndicator": " \ue796",
-    "suggest.timeout": 5000,
-    "suggest.triggerCompletionWait": 30,
-    "suggest.removeDuplicateItems": true,
-    "suggest.virtualText": false,
-    "suggest.filterGraceful": true,
-    "suggest.noselect": true,
-    "suggest.floatConfig": {
-        "border": true,
-        "rounded": true
-    },
-    "suggest.formatItems": ["kind", "shortcut", "abbr", "menu"],
-    "suggest.defaultSortMethod": "alphabetical",
-    "suggest.selection": "first",
-    "suggest.completionItemKindLabels": {
-        "method": "  ",
-        "function": "  ",
-        "variable": "[]",
-        "field": "  ",
-        "typeParameter": "<>",
-        "constant": "  ",
-        "class": " פּ ",
-        "interface": " 蘒",
-        "struct": "  ",
-        "event": "  ",
-        "operator": "  ",
-        "module": "  ",
-        "property": "  ",
-        "enum": " 練",
-        "reference": "  ",
-        "keyword": "  ",
-        "file": "  ",
-        "folder": " ﱮ ",
-        "color": "  ",
-        "unit": " 塞 ",
-        "snippet": "  ",
-        "text": "  ",
-        "constructor": "  ",
-        "value": "  ",
-        "enumMember": "  "
-    },
-    "coc.preferences.floatActions": true,
-    "coc.preferences.formatOnSave": true,
-    "coc.preferences.enableMessageDialog": true,
-    "diagnostic.level": "hint",
-    "diagnostic.virtualText": false,
-    "diagnostic.virtualTextCurrentLineOnly": true,
-    "diagnostic.virtualTextWinCol": 60,
-    "diagnostic.virtualTextFormat": "%message",
-    "diagnostic.virtualTextPrefix": " ❯❯❯ ",
-    "dialog.floatBorderHighlight": "rounded",
-    "diagnostic.errorSign": "",
-    "diagnostic.warningSign": "",
-    "diagnostic.infoSign": "",
-    "diagnostic.hintSign": "",
-    "diagnostic.floatConfig": {
-        "rounded": true,
-        "border": true
-    },
-    "list.indicator": "❯",
-    "prettier": {
-        "printWidth": 200,
-        "bracketSpacing": true,
-        "semi": true,
-        "enable": true,
-        "tabWidth": 4,
-        "eslintIntegration": true,
-        "formatterPriority": 1,
-        "formatOnSave": true,
-        "bracketSameLine": true,
-        "arrowParens": "avoid"
-    },
-    "javascript.inlayHints.variableTypes.enabled": false,
-    "javascript.inlayHints.parameterTypes.enabled": false,
-    "javascript.inlayHints.parameterNames.enabled": "none",
-    "javascript.inlayHints.enumMemberValues.enabled": false,
-    "javascript.inlayHints.functionLikeReturnTypes.enabled": false,
-    "javascript.inlayHints.propertyDeclarationTypes.enabled": false,
-    "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes": [
+				"c",
+				"cc",
+				"cpp",
+				"c++",
+				"objc",
+				"objcpp"
+			],
+			"rootPatterns": [
+				".ccls",
+				"compile_commands.json",
+				".git/",
+				".hg/"
+			],
+			"initializationOptions": {
+				"cache": {
+					"directory": "/tmp/ccls"
+				}
+			},
+			"client": {
+				"snippetSupport": true
+			}
+		},
+		"godot": {
+			"host": "127.0.0.1",
+			"filetypes": [
+				"gd",
+				"gdscript",
+				"gdscript3"
+			],
+			"port": 6005
+		},
+		"lua": {
+			"command": "lua-language-server",
+			"filetypes": [
+				"vim, lua"
+			],
+			"rootPatterns": [
+				"lua.config.json"
+			],
+			"settings": {
+				"Lua": {
+					"runtime": {
+						"version": "LuaJIT",
+						"path": "/usr/bin/luajit"
+					},
+					"diagnostics": {
+						"globals": [
+							"vim, lua"
+						]
+					},
+					"workspace": {
+						"library": {
+							"/usr/share/nvim/runtime/lua": true
+						}
+					}
+				}
+			}
+		},
+		"csharp-ls": {
+			"command": "csharp-ls",
+			"filetypes": [
+				"cs"
+			],
+			"rootPatterns": [
+				"*.csproj",
+				".vim/",
+				".git/",
+				".hg/"
+			]
+		},
+		"haxe": {
+			"command": "node",
+			"args": [
+				"/home/kamiloid/.config/haxe-language-server/bin/server.js"
+			],
+			"filetypes": [
+				"haxe"
+			],
+			"trace.server": "verbose",
+			"initializationOptions": {
+				"displayArguments": [
+					"build.hxml"
+				]
+			},
+			"settings": {
+				"haxe.executable": "haxe"
+			}
+		},
+		"coc.preferences.formatOnSaveFiletypes": [
+			"javascript",
+			"json",
+			"css",
+			"csharp",
+			"gdscript",
+			"html",
+			"js",
+			"rust",
+			"rs",
+			"lua",
+			"cpp",
+			"h",
+			"vim"
+		]
+	},
+	"haxe.useModule": true,
+	"haxe.modulePath": "/home/kamiloid/.config/haxe-language-server/bin/server.js",
+	"coc.preferences.formatOnType": true,
+	"tsserver.enable": true,
+	"lua.enable": true,
+	"godot.enable": true,
+	"rust-analyzer.enable": true,
+	"rust-analyzer.debug.runtime": "termdebug",
+	"rust-analyzer.diagnostics.enable": true,
+	"rust-analyzer.workspace.symbol.search.kind": "all_symbols",
+	"codeLens.enable": true,
+	"colors.enable": true,
+	"suggest.labelMaxLength": 50,
+	"suggest.snippetIndicator": " \ue796",
+	"suggest.timeout": 5000,
+	"suggest.triggerCompletionWait": 30,
+	"suggest.removeDuplicateItems": true,
+	"suggest.virtualText": false,
+	"suggest.filterGraceful": true,
+	"suggest.noselect": true,
+	"suggest.floatConfig": {
+		"border": true,
+		"rounded": true
+	},
+	"suggest.formatItems": [
+		"kind",
+		"shortcut",
+		"abbr",
+		"menu"
+	],
+	"suggest.defaultSortMethod": "alphabetical",
+	"suggest.selection": "first",
+	"suggest.completionItemKindLabels": {
+		"method": "  ",
+		"function": "  ",
+		"variable": "[]",
+		"field": "  ",
+		"typeParameter": "  ",
+		"constant": "  ",
+		"class": "  ",
+		"interface": "  ",
+		"struct": "  ",
+		"event": "  ",
+		"operator": "  ",
+		"module": " 󱒌 ",
+		"property": "  ",
+		"enum": "   ",
+		"reference": "  ",
+		"keyword": "  ",
+		"file": "  ",
+		"folder": "  ",
+		"color": "  ",
+		"unit": " 󰎔 ",
+		"snippet": "  ",
+		"text": "  ",
+		"constructor": "  ",
+		"value": " 󰇽 ",
+		"enumMember": "  "
+	},
+	"coc.preferences.floatActions": true,
+	"coc.preferences.formatOnSave": true,
+	"coc.preferences.enableMessageDialog": true,
+	"diagnostic.level": "hint",
+	"diagnostic.virtualText": false,
+	"diagnostic.virtualTextCurrentLineOnly": true,
+	"diagnostic.virtualTextWinCol": 60,
+	"diagnostic.virtualTextFormat": "%message",
+	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
+	"dialog.floatBorderHighlight": "rounded",
+	"diagnostic.errorSign": "",
+	"diagnostic.warningSign": "",
+	"diagnostic.infoSign": "",
+	"diagnostic.hintSign": "",
+	"diagnostic.floatConfig": {
+		"rounded": true,
+		"border": true
+	},
+	"list.indicator": "❯",
+	"prettier": {
+		"printWidth": 200,
+		"bracketSpacing": true,
+		"semi": true,
+		"enable": true,
+		"tabWidth": 4,
+		"eslintIntegration": true,
+		"formatterPriority": 1,
+		"formatOnSave": true,
+		"bracketSameLine": true,
+		"arrowParens": "avoid"
+	},
+	"javascript.inlayHints.variableTypes.enabled": false,
+	"javascript.inlayHints.parameterTypes.enabled": false,
+	"javascript.inlayHints.parameterNames.enabled": "none",
+	"javascript.inlayHints.enumMemberValues.enabled": false,
+	"javascript.inlayHints.functionLikeReturnTypes.enabled": false,
+	"javascript.inlayHints.propertyDeclarationTypes.enabled": false,
+	"javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false
 }

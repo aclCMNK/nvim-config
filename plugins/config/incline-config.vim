@@ -2,10 +2,10 @@ lua << EOF
 
 local function get_diagnostic_label(props)
     local icons = {
-        Error = "",
+        Error = "",
         Warn = "",
         Info = "",
-        Hint = "",
+        Hint = "",
     }
 
     local label = {}

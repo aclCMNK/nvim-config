@@ -26,10 +26,10 @@ set timeoutlen=100
 
 set encoding=UTF-8
 
-sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
+sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
 sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=
 sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=
-sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
+sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
 
 " Enable devicons
 let g:DevIconsEnableFoldersOpenClose = 1
@@ -78,12 +78,20 @@ endif
 set t_Co=256
 set background=dark
 
-
 source $HOME/.config/nvim/setup/colorscheme.vim
 source $HOME/.config/nvim/plugins/packer.vim
 source $HOME/.config/nvim/plugins/vimplug.vim
 source $HOME/.config/nvim/setup/commands.vim
 source $HOME/.config/nvim/setup/keys.vim
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+
+let g:markdown_fenced_languages = [
+      \ 'vim',
+      \ 'help'
+      \]
 
 "////AUTOCOMPLETE MENU COLOR
 " You can use the following highlight groups:

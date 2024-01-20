@@ -11,9 +11,9 @@ require('smoothcursor').setup({
         --▷
         head = { cursor = "➤", texthl = "SmoothCursor", linehl = nil },
         body = {
-            { cursor = "", texthl = "SmoothCursorRed" },
-            { cursor = "", texthl = "SmoothCursorOrange" },
-            { cursor = "●", texthl = "SmoothCursorYellow" },
+            { cursor = "", texthl = "SmoothCursorRed" },
+            { cursor = "", texthl = "SmoothCursorOrange" },
+            { cursor = "󰻂", texthl = "SmoothCursorYellow" },
             { cursor = "●", texthl = "SmoothCursorGreen" },
             { cursor = "•", texthl = "SmoothCursorAqua" },
             { cursor = ".", texthl = "SmoothCursorBlue" },

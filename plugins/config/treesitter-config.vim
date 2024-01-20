@@ -1,7 +1,7 @@
 lua << EOF
 
 require('nvim-treesitter.configs').setup{
-  ensure_installed = { 'html', 'css', 'javascript', 'json', 'php', 'vim', 'lua', 'bash', 'gdscript', 'godot_resource', 'rust' }, -- Ensure HTML parser is installed
+  ensure_installed = { 'html', 'css', 'javascript', 'json', 'php', 'vim', 'lua', 'bash', 'gdscript', 'godot_resource', 'rust', 'cpp' }, -- Ensure HTML parser is installed
   highlight = {
     enable = true, -- Enable syntax highlighting
     additional_vim_regex_highlighting = true,
@@ -9,7 +9,7 @@ require('nvim-treesitter.configs').setup{
   autotag = {
     enable = true,
     filetypes = {
-      'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx', 'rescript', 'css', 'lua', 'xml', 'php', 'markdown', 'rust', 'rs'
+      'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx', 'rescript', 'css', 'lua', 'xml', 'php', 'markdown', 'rust', 'rs', 'cpp'
     },
   },
   indent = { enable = true },
